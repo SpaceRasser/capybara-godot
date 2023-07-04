@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpkq5dtwro3ub"]
+
+[ext_resource type="PackedScene" uid="uid://c4itr5hgm1hfr" path="res://hazard_area.tscn" id="1_0vrqc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3h6ao"]
+size = Vector2(707.359, 112)
+
+[node name="DeathDown" type="Node2D"]
+
+[node name="HazardArea" parent="." instance=ExtResource("1_0vrqc")]
+position = Vector2(544.282, 324.389)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HazardArea"]
+position = Vector2(10.7183, -42.3895)
+shape = SubResource("RectangleShape2D_3h6ao")
