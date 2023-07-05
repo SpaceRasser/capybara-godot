@@ -1,6 +1,7 @@
-[gd_resource type="Theme" load_steps=3 format=3 uid="uid://blhqps45omcuq"]
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://blhqps45omcuq"]
 
 [ext_resource type="StyleBox" uid="uid://3l3mqhymi5c6" path="res://black_9slice.tres" id="1_h7ghb"]
+[ext_resource type="FontFile" uid="uid://cns7n3srwqswh" path="res://post-pixel-7.ttf" id="1_ihcow"]
 [ext_resource type="StyleBox" uid="uid://d3pxc1booy8vp" path="res://white_9slice.tres" id="2_vmbov"]
 
 [resource]
@@ -9,8 +10,10 @@ Button/colors/font_focus_color = Color(0, 0, 0, 1)
 Button/colors/font_hover_color = Color(0, 0, 0, 1)
 Button/colors/font_pressed_color = Color(1, 1, 1, 1)
 Button/font_sizes/font_size = 6
+Button/fonts/font = ExtResource("1_ihcow")
 Button/styles/focus = ExtResource("2_vmbov")
 Button/styles/hover = ExtResource("2_vmbov")
 Button/styles/normal = ExtResource("1_h7ghb")
 Button/styles/pressed = ExtResource("1_h7ghb")
 Label/font_sizes/font_size = 6
+Label/fonts/font = ExtResource("1_ihcow")
