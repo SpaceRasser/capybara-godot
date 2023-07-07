@@ -1,0 +1,82 @@
+[gd_scene load_steps=8 format=3 uid="uid://cge3vluohkjop"]
+
+[ext_resource type="Script" path="res://Intro.gd" id="1_v2t27"]
+[ext_resource type="Texture2D" uid="uid://tel7nfkc1k4v" path="res://intro.png" id="2_63cn6"]
+[ext_resource type="AudioStream" uid="uid://benuct8aelvb1" path="res://Cool Intro.mp3" id="3_skxj7"]
+
+[sub_resource type="Animation" id="Animation_ehlyb"]
+resource_name = "Fade in"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_yi2kt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_4st2e"]
+resource_name = "Fade out"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_f8xdl"]
+_data = {
+"Fade in": SubResource("Animation_ehlyb"),
+"Fade out": SubResource("Animation_4st2e"),
+"RESET": SubResource("Animation_yi2kt")
+}
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_v2t27")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(159.75, 90.0001)
+scale = Vector2(0.166927, 0.166667)
+texture = ExtResource("2_63cn6")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -160.0
+offset_top = -144.0
+offset_right = 464.0
+offset_bottom = 288.0
+color = Color(0, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_f8xdl")
+}
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_skxj7")
