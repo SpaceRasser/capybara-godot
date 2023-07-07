@@ -50,7 +50,7 @@ _data = {
 script = ExtResource("1_j0f67")
 
 [node name="Player" parent="." instance=ExtResource("1_ydgga")]
-position = Vector2(274, 1)
+position = Vector2(274, 9)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
