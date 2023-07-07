@@ -4,7 +4,6 @@ extends Node2D
 
 var level_time = 0.0
 var start_level_msec = 0.0
-var world_time = 0.0
 
 @onready var level_completed = $CanvasLayer/LevelCompleted
 @onready var start_in = %StartIn
@@ -44,8 +43,6 @@ func go_to_next_level():
 	get_tree().change_scene_to_packed(next_level)
 
 func show_level_completed():
-	world_time += level_time / 1000.0
-	print(str(world_time))
 	level_completed.show()
 	level_completed.retry_button.grab_focus()
 	get_tree().paused = true
